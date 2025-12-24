@@ -34,7 +34,7 @@ console.log("Path calculado:", path);
 
             document.getElementById('card-title').textContent = `¡Feliz Navidad, ${data.nombre}!`;
             document.getElementById('card-content').innerHTML = `
-                <p>Estimado/a ${data.nombre},</p>
+                <p>${data.nombre},</p>
                 <p>${data.mensaje}</p>
                 <p>Brindemos por un año lleno de éxitos y nuevas aventuras juntos.</p>
             `;
