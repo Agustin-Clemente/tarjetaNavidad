@@ -23,7 +23,10 @@
             let path = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
             path = path.split('/').pop();
 
-            const data = PERSONAS[path] || MENSAJE_GENERICO;
+console.log("Path calculado:", path);
+
+    const data = PERSONAS[path] || MENSAJE_GENERICO;
+    console.log("Data seleccionada:", data);
 
             document.getElementById('card-title').textContent = `¡Feliz Navidad, ${data.nombre}!`;
             document.getElementById('card-content').innerHTML = `
