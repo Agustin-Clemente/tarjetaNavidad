@@ -10,6 +10,10 @@
             "ana": {
                 nombre: "Ana",
                 mensaje: "Tu talento nos inspira cada día. ¡Espero que el 2026 te traiga todo lo que sueñas!"
+            },
+            "pastelito": {
+                nombre: "Pastelito",
+                mensaje: "Feliz navidad pastelito, te quiero 😌, espero que el próximo año esté lleno de aventuras y golosinas"
             }
         };
 
