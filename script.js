@@ -1,7 +1,7 @@
         const PERSONAS = {
-            "maria": {
-                nombre: "María",
-                mensaje: "Gracias por tu increíble dedicación. ¡Que estas fiestas estén llenas de risas y momentos inolvidables!"
+            "guille": {
+                nombre: "Guille",
+                mensaje: "Que el 2026 llegue con más sexo y menos trabajo. ¡Feliz Navidad!"
             },
             "jose": {
                 nombre: "José",
