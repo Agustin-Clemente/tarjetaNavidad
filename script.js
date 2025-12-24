@@ -163,4 +163,4 @@ console.log("Path calculado:", path);
             }
         }
 
-        window.onload = () => { createPines(); createLEDs(); createSnow(); };
+        window.onload = () => { createPines(); createLEDs(); createSnow(); cargarMensajePersonalizado(); };
