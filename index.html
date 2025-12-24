@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¡Feliz Navidad Compañeros!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="audio-unlocker">
+        <div id="unlock-button">🎁 ABRIR REGALO</div>
+        <p class="mt-4 text-gold">¡Feliz Navidad!</p>
+    </div>
+
+    <button id="music-control">
+        <svg id="music-on-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+        </svg>
+        <svg id="music-off-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+        </svg>
+    </button>
+
+    <div class="lights-string" id="led-string"></div>
+    <div class="decoration-layer" id="pine-forest"></div>
+    
+    <div class="snowman">
+        <svg width="100" height="150" viewBox="0 0 100 150">
+            <circle cx="50" cy="110" r="35" fill="white" stroke="#ddd" />
+            <circle cx="50" cy="65" r="25" fill="white" stroke="#ddd" />
+            <circle cx="50" cy="30" r="18" fill="white" stroke="#ddd" />
+            <circle cx="43" cy="25" r="2" fill="black" />
+            <circle cx="57" cy="25" r="2" fill="black" />
+            <polygon points="50,28 65,32 50,35" fill="orange" />
+            <rect x="35" y="10" width="30" height="5" fill="#222" />
+            <rect x="40" y="0" width="20" height="10" fill="#222" />
+        </svg>
+    </div>
+
+    <div class="landscape"></div>
+
+    <div class="envelope-container" id="envelope-wrapper">
+        <div class="envelope" id="envelope">
+            <div class="seal" style="font-size: 2.5rem; z-index: 35;">🎄</div>
+        </div>
+        <div class="card" id="main-card">
+            <div class="text-xs text-red-600 font-bold mb-4 uppercase">✨ Mensaje de Navidad ✨</div>
+            <h2>¡Feliz Navidad!</h2>
+            <p>Queridos compañeros,</p>
+            <p>Es un honor compartir otro año con un equipo tan talentoso. Que esta temporada traiga alegría infinita a sus corazones y paz a sus hogares.</p>
+            <p>Brindemos por los éxitos alcanzados y por los nuevos desafíos que nos esperan. ¡Que el próximo año sea brillante para todos!</p>
+            <p class="mt-6 font-bold text-red-700 italic">¡Salud y Felicidad!</p>
+            <div class="mt-8 text-sm italic text-gray-400 border-t pt-4 w-full">Vuestro equipo de IT</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

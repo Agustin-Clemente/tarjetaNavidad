@@ -1,0 +1,248 @@
+  :root {
+            --primary-red: #d42426;
+            --gold: #f4b41a;
+            --snow-white: #ffffff;
+            --sky-dark: #001524;
+            --sky-light: #003366;
+            --pine-green: #1a472a;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--sky-dark), var(--sky-light));
+            font-family: 'Mountains of Christmas', cursive;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden; /* Bloqueado hasta que se abra el sobre */
+            transition: min-height 0.5s ease;
+        }
+
+        body.allow-scroll {
+            overflow-y: auto;
+            min-height: 200vh;
+        }
+
+        /* Nieve */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            user-select: none;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+
+        /* Paisaje de fondo */
+        .landscape {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 25vh;
+            background: #ffffff;
+            border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+            box-shadow: 0 -5px 30px rgba(255,255,255,0.3);
+            z-index: 5;
+        }
+
+        .decoration-layer {
+            position: fixed;
+            bottom: 15vh;
+            width: 100%;
+            height: 200px;
+            pointer-events: none;
+            z-index: 6;
+            overflow: hidden;
+        }
+
+        .pine-tree {
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+            height: 150px;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            transform-origin: bottom center;
+        }
+
+        .ornament {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            animation: blink 1.5s infinite alternate;
+            z-index: 2;
+        }
+
+        @keyframes blink {
+            from { opacity: 0.3; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1.2); filter: brightness(1.5); }
+        }
+
+        .snowman {
+            position: fixed;
+            bottom: 18vh;
+            left: 5%; 
+            z-index: 10;
+            transform: scale(0.7);
+        }
+
+        @media (min-width: 640px) {
+            .snowman { left: 10%; transform: scale(0.9); }
+        }
+
+        /* Luces */
+        .lights-string {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+            z-index: 40;
+        }
+
+        .led {
+            width: 12px;
+            height: 20px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: light-blink 1s infinite alternate;
+        }
+
+        @keyframes light-blink {
+            from { filter: brightness(0.5); box-shadow: none; }
+            to { filter: brightness(1.8); box-shadow: 0 0 15px currentColor; }
+        }
+
+        /* Sobre e Interacción */
+        .envelope-container {
+            margin-top: 30vh;
+            position: relative;
+            z-index: 100;
+            cursor: pointer;
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(100vh);
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .envelope-container.visible {
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .envelope {
+            width: 280px;
+            height: 180px;
+            background: var(--primary-red);
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid var(--gold);
+            z-index: 30;
+        }
+
+        .envelope::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 90px 136px 0 136px;
+            border-color: #b31d1f transparent transparent transparent;
+            z-index: 32;
+            transition: transform 0.6s;
+            transform-origin: top;
+        }
+
+        .open .envelope::after {
+            transform: rotateX(180deg);
+            z-index: 10;
+        }
+
+        /* Carta corregida */
+        .card {
+            position: absolute; /* Cambiado a absoluto para que nazca del sobre */
+            top: 10px;
+            width: 90%;
+            max-width: 440px;
+            min-height: 400px;
+            background: white;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: scale(0.1) translateY(0);
+            opacity: 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            border: 10px double var(--primary-red);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 20; /* Detrás del frente del sobre inicialmente */
+            pointer-events: none;
+        }
+
+        .open .card {
+            transform: scale(1) translateY(-280px); /* Sube desde el sobre */
+            opacity: 1;
+            z-index: 200;
+            pointer-events: auto;
+            position: relative; /* Cambia a relativo al final para empujar el scroll si es necesario */
+            margin-top: 50px;
+        }
+
+        .card h2 { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 1rem; }
+        .card p { font-size: 1.5rem; line-height: 1.4; color: #333; font-family: 'Great Vibes', cursive; margin-bottom: 0.8rem; }
+
+        #music-control {
+            position: fixed;
+            top: 20px;
+            right: 15px;
+            z-index: 500;
+            background: var(--primary-red);
+            padding: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            color: white;
+        }
+
+        #audio-unlocker {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            backdrop-filter: blur(15px);
+        }
+
+        #unlock-button {
+            background: var(--primary-red);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            border: 4px solid var(--gold);
+            cursor: pointer;
+        }
