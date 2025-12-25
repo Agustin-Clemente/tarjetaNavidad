@@ -21,7 +21,7 @@
             },
             "azul": {
                 nombre: "Azul",
-                mensaje: "Muchas gracias por otro año compartiendo equipo y bancar a veces mis quejas, mis malhumores y mis locuras. Espero que este 2026 venga lleno de éxitos y logros para todos nosotros. Con nuevas plantitas en la Secretaría y buenas predicciones para todos. Te deseo una feliz navidad y un próspero año nuevo."
+                mensaje: "Muchas gracias por otro año compartiendo equipo y bancar a veces mis quejas, mis malhumores y mis locuras. Espero que este 2026 venga lleno de logros para todos nosotros. Con nuevas plantitas en la Secretaría y buenas predicciones para todos. Te deseo una feliz navidad y un próspero año nuevo."
             },
             "dante": {
                 nombre: "Dante",
@@ -132,7 +132,7 @@
                 document.body.classList.remove('allow-scroll');
                 window.scrollTo({top: 0, behavior: 'smooth'});
             }
-            if (!isMusicActive) startAudio();
+            // if (!isMusicActive) startAudio();
         });
 
         musicBtn.addEventListener('click', (e) => {
