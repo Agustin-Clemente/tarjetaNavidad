@@ -3,18 +3,46 @@
                 nombre: "Guille",
                 mensaje: "Que el 2026 llegue con más sexo y menos trabajo. ¡Feliz Navidad!"
             },
-            "jose": {
-                nombre: "José",
-                mensaje: "Eres una pieza fundamental del equipo. Disfruta de un merecido descanso con los tuyos."
+            "duilio": {
+                nombre: "Duilio",
+                mensaje: "Qué decirte que no te haya dicho hasta ahora. Cada año me volves a demostrar lo buena persona que sos y que te mereces lo mejor. No es necesario aquí hablar de trabajo, porque sabemos que pesa mucho más la calidad humana de cada uno, y vos tenés de sobra. Gracias por enseñarnos a ser mejores personas cada día. ¡Feliz Navidad y próspero año nuevo, espero seguir compartiendo equipo con vos por muchos años más!"
             },
-            "ana": {
-                nombre: "Ana",
-                mensaje: "Tu talento nos inspira cada día. ¡Espero que el 2026 te traiga todo lo que sueñas!"
+            "tomas": {
+                nombre: "Tomás",
+                mensaje: "Gracias por dejarme formar parte de este gran equipo. Con mis mañas, mis defectos, mi forma particular de ser. Cada año que pasa demostrás ser un gran líder y es un placer para mí compartir el trabajo a tu lado. Te deseo una feliz navidad y un próspero año nuevo, a seguir luchando en 2026 por otro año de logros."
             },
             "pastelito": {
                 nombre: "Pastelito",
                 mensaje: "Feliz navidad pastelito, te quiero 😌, espero que el próximo año esté lleno de aventuras y golosinas"
-            }
+            },
+            "lucas": {
+                nombre: "Lucas",
+                mensaje: "Muchas gracias por toda la ayuda durante el año, pero más aun por ser la excelente persona que sos. Siempre con una sonrisa y buena onda para todos. Te deseo una feliz navidad y un próspero año nuevo, y a seguir luchando en el 2026 por otro año de logros."
+            },
+            "azul": {
+                nombre: "Azul",
+                mensaje: "Muchas gracias por otro año compartiendo equipo y bancar a veces mis quejas, mis malhumores y mis locuras. Espero que este 2026 venga lleno de éxitos y logros para todos nosotros. Con nuevas plantitas en la Secretaría y buenas predicciones para todos. Te deseo una feliz navidad y un próspero año nuevo."
+            },
+            "dante": {
+                nombre: "Dante",
+                mensaje: "Gracias por hacer más ameno mi paso por el equipo. Haces que sea fácil trabajar con vos y siempre estás dispuesto a ayudar. Y sé que me entendés cada vez que quiero prender fuego primaria. Te deseo una feliz navidad y un próspero año nuevo."
+            },
+            "vicky": {
+                nombre: "Vicky",
+                mensaje: "Aunque no nos conozcamos tanto, se nota lo buena persona que eres, y eso se valora mucho en nuestro equipo, más allá del excelente trabajo que haces. Gracias por estar siempre dispuesta a ayudar y espero que te sientas cómoda con nosotros así como yo me siento cómodo con ustedes. Te deseo una feliz navidad y un próspero año nuevo."
+            },
+            "paula": {
+                nombre: "Pau",
+                mensaje: "Gracias por bancarme durante este cuatrimestre, gracias por hacer más fáciles mis tardes y por ayudarme en todo, pero principalmente, por ser buena persona. Valoro mucho más eso que el trabajo que puede hacer cada uno, y fue un placer para mí compartir equipo con vos. Te deseo una feliz navidad y un próspero año nuevo. Podés contar conmigo."
+            },
+            "xime": {
+                nombre: "Amiga!",
+                mensaje: "Xime (para que no pienses que le mando lo mismo a todas), aunque no nos veamos tanto, y no compartamos salidas, sabes lo mucho que te quiero y aprecio, y que estoy para lo que necesites siempre... casi literal porque no duermo nunca 😜. Podes contar conmigo y te agradezco también por compartirme tu amistad y tenerme siempre en cuenta en tantos proyectos que se te ocurren. Por otro año de logros!"
+            },
+            "caro": {
+                nombre: "Chiappecita",
+                mensaje: "Aunque no nos veamos y no charlemos tanto, no me olvido de esa persona tan especial que me bancó en tantas oportunidades, y que estoy seguro que hoy lo volvería a hacer. Sos de las personas más bondadosas que conozco, ojalá pudiera devolverte aunque sea una partecita de tanto cariño que me diste siempre. Te quiero muchísimo y te tengo presente a diario, aunque casi nunca te lo haga saber. El cariño que te tengo es infinito. Podés contar conmigo para lo que sea y en cualquier momento. Espero que tengas una hermosa navidad y un próspero año nuevo."
+            },
         };
 
         const MENSAJE_GENERICO = {
@@ -23,14 +51,11 @@
         };
 
         function cargarMensajePersonalizado() {
-            // Limpia la ruta para obtener solo el nombre
             let path = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
             path = path.split('/').pop();
 
-console.log("Path calculado:", path);
 
-    const data = PERSONAS[path] || MENSAJE_GENERICO;
-    console.log("Data seleccionada:", data);
+            const data = PERSONAS[path] || MENSAJE_GENERICO;
 
             document.getElementById('card-title').textContent = `¡Feliz Navidad, ${data.nombre}!`;
             document.getElementById('card-content').innerHTML = `
@@ -93,7 +118,10 @@ console.log("Path calculado:", path);
         unlockBtn.addEventListener('click', () => {
             startAudio();
             unlocker.style.opacity = '0';
-            setTimeout(() => { unlocker.remove(); envelopeWrapper.classList.add('visible'); }, 800);
+            setTimeout(() => { 
+                unlocker.remove(); 
+                envelopeWrapper.classList.add('visible'); 
+            }, 800);
         });
 
         envelopeWrapper.addEventListener('click', () => {

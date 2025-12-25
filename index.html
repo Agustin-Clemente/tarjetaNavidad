@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>¡Feliz Navidad Compañeros!</title>
+    <title>¡Feliz Navidad!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -11,8 +11,9 @@
 <body>
 
     <div id="audio-unlocker">
-        <div id="unlock-button">🎁 ABRIR REGALO</div>
-        <p class="mt-4 text-gold">¡Feliz Navidad!</p>
+        <div id="unlock-button">🎁 ABRIR TARJETA</div>
+        <p class="mt-4 text-gold text-2xl">¡Feliz Navidad!</p>
+        <p class="mt-4"> &copy; Agustin Clemente </p>
     </div>
 
     <button id="music-control">
@@ -45,17 +46,21 @@
 
     <div class="envelope-container" id="envelope-wrapper">
         <div class="envelope" id="envelope">
-            <div class="seal" style="font-size: 2.5rem; z-index: 35;">🎄</div>
+            <div class="seal">🎄</div>
         </div>
         <div class="card" id="main-card">
-            <div class="text-xs text-red-600 font-bold mb-4 uppercase tracking-widest">✨ Mensaje Especial ✨</div>
-            <h2 id="card-title">¡Feliz Navidad!</h2>
+            <div class="text-sm text-red-600 font-bold mb-4 uppercase tracking-widest">✨ Mensaje Especial ✨</div>
+            <h2 id="card-title"></h2>
             <div id="card-content">
             </div>
             <p class="mt-6 font-bold text-red-700 italic">¡Salud y Felicidad!</p>
-            <div class="mt-8 text-sm italic text-gray-400 border-t pt-4 w-full">Enviado con ❤️</div>
+            <div class="mt-8 text-lg italic text-gray-700 border-t pt-4 w-full">Enviado con ❤️ por Agustin Clemente</div>
         </div>
     </div>
+
+    <footer class="footer">
+        &copy; Agustin Clemente
+    </footer>
 
     <script src="script.js"></script>
 </body>

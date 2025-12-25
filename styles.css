@@ -176,7 +176,7 @@
             z-index: 10;
         }
 
-        /* Carta corregida */
+        /* Carta */
         .card {
             position: absolute; /* Cambiado a absoluto para que nazca del sobre */
             top: 10px;
@@ -208,8 +208,24 @@
             margin-top: 50px;
         }
 
-        .card h2 { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 1rem; }
-        .card p { font-size: 1.5rem; line-height: 1.4; color: #333; font-family: 'Great Vibes', cursive; margin-bottom: 0.8rem; }
+        .card h2 { 
+            font-size: 2.5rem; 
+            color: var(--primary-red); 
+            margin-bottom: 1rem; 
+        
+        }
+        .card p { 
+            font-size: 2rem; 
+            line-height: 1.4; 
+            color: #333; 
+            font-family: 'Great Vibes', cursive; 
+            margin-bottom: 0.8rem; 
+        }
+
+        .seal{
+            font-size: 2.5rem; 
+            z-index: 35;
+        }
 
         #music-control {
             position: fixed;
@@ -227,7 +243,7 @@
         #audio-unlocker {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 9999;
+            z-index: 600;
             background: rgba(0, 0, 0, 0.98);
             display: flex;
             flex-direction: column;
@@ -245,4 +261,19 @@
             font-size: 1.5rem;
             border: 4px solid var(--gold);
             cursor: pointer;
+        }
+
+        /* Footer - Always visible */
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 1rem;
+            color: rgba(232, 22, 22, 0.7);
+            z-index: 99;
+            padding: 8px 16px;
+            pointer-events: none;
+            font-family: Arial, sans-serif;
         }
